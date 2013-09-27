@@ -1,0 +1,649 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="shift_jis">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes, target-densitydpi=medium-dpi">
+<link rel="stylesheet" href="/JRADB/css/reset.css">
+<link rel="stylesheet" href="/JRADB/css/ssi.css">
+<link rel="stylesheet" href="/JRADB/css/contents.css">
+<link rel="stylesheet" href="/JRADB/css/headerfooter.css">
+<script type="text/javascript" src="/common/js/common2.js"></script>
+<script type="text/javascript" src="/JRADB/js/footerFixed.js"></script>
+<script type="text/javascript" src="/js/libs/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/js/libs/expander.js"></script>
+<script type="text/javascript" src="/JRADB/js/headermenu.js"></script>
+
+<script type="text/javascript" src="/JRADB/js/seiseki.js"></script>
+<link rel="stylesheet" href="/JRADB/css/ketuka.css">
+<title>レース結果</title>
+</head>
+<body>
+
+
+
+
+<div id="proc_hf">
+<!-- ヘッダー -->
+	<div class='head_Top_bgColor'></div>
+	<div class='head_Top_bgColor3'></div>
+	<div class='header'>
+		<div class='head_Left'>
+			<a href='/index.html'><img class='head_Rogo' src='/images/header/rogo.png' width='108px' height='41px'></a>
+			<img class='head_Menu_Img' src='/images/menu_icon/main_manu.png' width='130px' height='30px'>
+		</div>
+	</div>
+	<div class='head_Top_bgColor2'></div>
+
+<!-- ヘッダー終わり -->
+<div class='clear'></div>
+<!-- メインメニューアイコン -->
+	<div id='main_Menu_Icon' style='display: none;'>
+		<div class='main_Icon'>
+			<a href="#" onclick="doAction('/JRADB/accessI.html','sw01ide00/D4')">
+			<img src='/images/menu_icon/01.png' width='49px' height='49px'><br><div class='main_Icon_font'>今週の開催</div>
+			</a>
+		</div>
+
+		<div class='main_Icon'>
+			<a href="#" onclick="doAction('/JRADB/accessD.html','sw01dli00/80')">
+			<img src='/images/menu_icon/02.png' width='49px' height='49px'><br><div class='main_Icon_font'>出馬表</div>
+			</a>
+		</div>
+
+		<div class='main_Icon'>
+			<a href="#" onclick="doAction('/JRADB/accessS.html','sw01sli00/3C')">
+			<img src='/images/menu_icon/03.png' width='49px' height='49px'><br><div class='main_Icon_font'>レース結果</div>
+			</a>
+		</div>
+
+		<div class='main_Icon'>
+			<a href="#" onclick="doAction('/JRADB/accessH.html','sw01hli00/90')">
+			<img src='/images/menu_icon/04.png' width='49px' height='49px'><br><div class='main_Icon_font'>払戻金一覧</div>
+			</a>
+		</div>
+
+		<div class='main_Icon'>
+			<a href='http://www.ipat.jra.go.jp/sp/' target='_Blank'>
+			<img src='/images/menu_icon/05.png' width='49px' height='49px'><br><div class='main_Icon_font'>IPATログイン</div>
+			</a>
+		</div>
+
+		<div class='clear'></div>
+
+		<div><img class='close_Img'  src='/images/menu_icon/close.png' width='97px' height='17px'></div>
+
+		<div class='clear'></div>
+
+	</div>
+
+		<div class='head_Top_bgColor3'></div>
+
+
+<!-- メインメニューアイコン終わり -->
+</div>
+
+<div id="titleDiv">
+  <span>レース結果</span>
+</div>
+
+<div class="joSelectArea">
+  <ul>
+    <li><a href="#" onclick="return doAction('/JRADB/accessS.html','sw01srlH6062013040720130922/59');" class="joBtnSelected">中山</a></li>
+    <li><a href="#" onclick="return doAction('/JRADB/accessS.html','sw01srlH6092013040720130922/37');" class="joBtn">阪神</a></li>
+    <li>&nbsp;</li>
+  </ul>
+  <div class="clear"></div>
+</div>
+
+
+<div class="kaisaisentakuLink">
+  <a href="#" onclick="return doAction('/JRADB/accessS.html','sw01sliH6/14');">開催選択へ</a>
+</div>
+
+<div class="raceSelectArea">
+  <table>
+  <tr>
+    <td><a href="#" onclick="return doAction('/JRADB/accessS.html','sw01sdeH606201304070120130922/F2');">1R</a></td>
+    <td><a href="#" onclick="return doAction('/JRADB/accessS.html','sw01sdeH606201304070220130922/A7');">2R</a></td>
+    <td><a href="#" onclick="return doAction('/JRADB/accessS.html','sw01sdeH606201304070320130922/5C');">3R</a></td>
+    <td><a href="#" onclick="return doAction('/JRADB/accessS.html','sw01sdeH606201304070420130922/11');">4R</a></td>
+    <td class="raceSelected">5R</td>
+    <td><a href="#" onclick="return doAction('/JRADB/accessS.html','sw01sdeH606201304070620130922/7B');">6R</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="return doAction('/JRADB/accessS.html','sw01sdeH606201304070720130922/30');">7R</a></td>
+    <td><a href="#" onclick="return doAction('/JRADB/accessS.html','sw01sdeH606201304070820130922/E5');">8R</a></td>
+    <td><a href="#" onclick="return doAction('/JRADB/accessS.html','sw01sdeH606201304070920130922/9A');">9R</a></td>
+    <td><a href="#" onclick="return doAction('/JRADB/accessS.html','sw01sdeH606201304071020130922/8F');">10R</a></td>
+    <td><a href="#" onclick="return doAction('/JRADB/accessS.html','sw01sdeH606201304071120130922/44');">11R</a></td>
+    <td><a href="#" onclick="return doAction('/JRADB/accessS.html','sw01sdeH606201304071220130922/F9');">12R</a></td>
+  </tr>
+  </table>
+</div>
+
+
+<h2 class="subTitle">2013年9月22日(日)&nbsp;4回中山7日</h2>
+<div id="kekkaRaceInfo">
+  <div class="kekkaRaceTitle">
+
+    <span>5R&nbsp;メイクデビュー中山&nbsp;</span>
+  </div>
+
+  <div class="kekkaRaceJoken">
+    <span>サラ系2歳&nbsp;新馬&nbsp;[指定]&nbsp;馬齢
+    <br>1600m&nbsp;芝・右 外&nbsp;発走12:30
+    <br>天候:晴&nbsp;芝:良&nbsp;</span>
+  </div>
+
+  <table class="kekkaLinkBtnsArea">
+    <tr>
+
+      <td class="imgBtnTd">
+        
+        <!-- SSI r1 --><script>var IF_SIZE = {width: ((location.hostname.match(/sp.jra.jp/))||(location.hostname.match(/jrahp-spken.turf.jp/)) ? 37 : 120),height: ((location.hostname.match(/sp.jra.jp/))||(location.hostname.match(/jrahp-spken.turf.jp/)) ? 30 : 23)};document.write('<iframe src="http://web-cache.stream.ne.jp/web/jra/onetag/onetag.html?videotype=4&pcurl=jra_seiseki/2013/0922/201304060705&andurl=and_seiseki/2013/0922/201304060705&iosurl=jra_seiseki/2013/0922/201304060705/index.m3u8&and4url=and_seiseki/2013/0922/201304060705/index.m3u8&thumburl=" width="'+IF_SIZE.width+'" height="'+IF_SIZE.height+'" frameborder="0" style="border-style:none" allowtransparency="true"></iframe>');</script>
+        
+      </td>
+
+      <td class="NoImgBtnTd">
+        <a href="#" onclick="return doAction('/JRADB/accessO.html','sw151ouD906201304070520130922Z/84');" class="nonImgBtn">オッズ</a>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="kekkaTbl">
+  <table>
+    <tr>
+      <th class="tyakuTh">着順</th>
+      <th class="wakuTh">枠</th>
+      <th class="ubanTh">馬番</th>
+
+      <th class="umaTh">馬名 / 単勝人気<br>性齢 / 馬体重<br>騎手(負担重量) / 調教師<br>タイム(着差) / 推定上り</th>
+    </tr>
+
+    <tr>
+      <td class="tyakuTd">1</td>
+      <td class="wakuTd waku8">8</td>
+      <td class="ubanTd">12</td>
+
+      <td class="umaTd">
+        <a href="#" onclick="return doAction('/JRADB/accessU.html','sj01udeH12011104485/43')" class="a-display"><span class="bamei">グリサージュ</span></a>
+
+        <span class="ninki">4人気</span><br class="clear">
+
+        <span>牝2&nbsp;/&nbsp;480kg(初出走)</span><br>
+        <span>
+
+          <a href="#" onclick="return doAction('/JRADB/accessK.html','sw04kmkH10689/42')">江田照男</a>(54.0)&nbsp;
+
+          <a href="#" onclick="return doAction('/JRADB/accessC.html','sw05cmkH11052/DD')" class="a-display">菊川正達</a>(美浦)
+
+        </span><br>
+
+        <span>1:37.2&nbsp;/&nbsp;35.2</span>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td class="tyakuTd">2</td>
+      <td class="wakuTd waku7">7</td>
+      <td class="ubanTd">9</td>
+
+      <td class="umaTd">
+        <a href="#" onclick="return doAction('/JRADB/accessU.html','sj01udeH12011100647/8F')" class="a-display"><span class="bamei">オートクレール</span></a>
+
+        <span class="ninki">8人気</span><br class="clear">
+
+        <span>牝2&nbsp;/&nbsp;420kg(初出走)</span><br>
+        <span>
+
+          <a href="#" onclick="return doAction('/JRADB/accessK.html','sw04kmkH11085/7F')">松岡正海</a>(54.0)&nbsp;
+
+          <a href="#" onclick="return doAction('/JRADB/accessC.html','sw05cmkH11118/C3')" class="a-display">高柳瑞樹</a>(美浦)
+
+        </span><br>
+
+        <span>1:37.3&nbsp;(１／２)&nbsp;/&nbsp;35.0</span>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td class="tyakuTd">3</td>
+      <td class="wakuTd waku5">5</td>
+      <td class="ubanTd">5</td>
+
+      <td class="umaTd">
+        <a href="#" onclick="return doAction('/JRADB/accessU.html','sj01udeH12011101696/5B')" class="a-display"><span class="bamei">メイショウボイス</span></a>
+
+        <span class="ninki">2人気</span><br class="clear">
+
+        <span>牡2&nbsp;/&nbsp;488kg(初出走)</span><br>
+        <span>
+
+          <a href="#" onclick="return doAction('/JRADB/accessK.html','sw04kmkH10666/C8')">武豊</a>(54.0)&nbsp;
+
+          <a href="#" onclick="return doAction('/JRADB/accessC.html','sw05cmkH11013/BD')" class="a-display">小島太</a>(美浦)
+
+        </span><br>
+
+        <span>1:37.9&nbsp;(３ 1/2)&nbsp;/&nbsp;35.4</span>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td class="tyakuTd">4</td>
+      <td class="wakuTd waku8">8</td>
+      <td class="ubanTd">11</td>
+
+      <td class="umaTd">
+        <a href="#" onclick="return doAction('/JRADB/accessU.html','sj01udeH12011104014/9C')" class="a-display"><span class="bamei">セルバンテス</span></a>
+
+        <span class="ninki">1人気</span><br class="clear">
+
+        <span>牡2&nbsp;/&nbsp;442kg(初出走)</span><br>
+        <span>
+
+          <a href="#" onclick="return doAction('/JRADB/accessK.html','sw04kmkH10660/80')">横山典弘</a>(54.0)&nbsp;
+
+          <a href="#" onclick="return doAction('/JRADB/accessC.html','sw05cmkH11067/04')" class="a-display">久保田貴士</a>(美浦)
+
+        </span><br>
+
+        <span>1:38.0&nbsp;(クビ)&nbsp;/&nbsp;35.6</span>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td class="tyakuTd">5</td>
+      <td class="wakuTd waku1">1</td>
+      <td class="ubanTd">1</td>
+
+      <td class="umaTd">
+        <a href="#" onclick="return doAction('/JRADB/accessU.html','sj01udeH12011102667/8D')" class="a-display"><span class="bamei">ファイネストアワー</span></a>
+
+        <span class="ninki">7人気</span><br class="clear">
+
+        <span>牡2&nbsp;/&nbsp;448kg(初出走)</span><br>
+        <span>
+
+          <a href="#" onclick="return doAction('/JRADB/accessK.html','sw04kmkH11051/0E')">嘉藤貴行</a>(54.0)&nbsp;
+
+          <a href="#" onclick="return doAction('/JRADB/accessC.html','sw05cmkH10408/0D')" class="a-display">田中清隆</a>(美浦)
+
+        </span><br>
+
+        <span>1:38.0&nbsp;(ハナ)&nbsp;/&nbsp;35.0</span>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td class="tyakuTd">6</td>
+      <td class="wakuTd waku3">3</td>
+      <td class="ubanTd">3</td>
+
+      <td class="umaTd">
+        <a href="#" onclick="return doAction('/JRADB/accessU.html','sj01udeH12011100031/A7')" class="a-display"><span class="bamei">デューイ</span></a>
+
+        <span class="ninki">5人気</span><br class="clear">
+
+        <span>牡2&nbsp;/&nbsp;468kg(初出走)</span><br>
+        <span>
+
+          <a href="#" onclick="return doAction('/JRADB/accessK.html','sw04kmkH10663/24')">蛯名正義</a>(54.0)&nbsp;
+
+          <a href="#" onclick="return doAction('/JRADB/accessC.html','sw05cmkH11134/69')" class="a-display">高橋文雅</a>(美浦)
+
+        </span><br>
+
+        <span>1:38.0&nbsp;(クビ)&nbsp;/&nbsp;35.8</span>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td class="tyakuTd">7</td>
+      <td class="wakuTd waku5">5</td>
+      <td class="ubanTd">6</td>
+
+      <td class="umaTd">
+        <a href="#" onclick="return doAction('/JRADB/accessU.html','sj01udeH12011103351/27')" class="a-display"><span class="bamei">ヤマニンボレアル</span></a>
+
+        <span class="ninki">9人気</span><br class="clear">
+
+        <span>牡2&nbsp;/&nbsp;498kg(初出走)</span><br>
+        <span>
+
+          <a href="#" onclick="return doAction('/JRADB/accessK.html','sw04kmkH11119/0C')">伊藤工真</a>(54.0)&nbsp;
+
+          <a href="#" onclick="return doAction('/JRADB/accessC.html','sw05cmkH11131/C5')" class="a-display">蛯名利弘</a>(美浦)
+
+        </span><br>
+
+        <span>1:38.2&nbsp;(１ 1/2)&nbsp;/&nbsp;35.7</span>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td class="tyakuTd">8</td>
+      <td class="wakuTd waku7">7</td>
+      <td class="ubanTd">10</td>
+
+      <td class="umaTd">
+        <a href="#" onclick="return doAction('/JRADB/accessU.html','sj01udeH12011109108/34')" class="a-display"><span class="bamei">シンボリネルソン</span></a>
+
+        <span class="ninki">3人気</span><br class="clear">
+
+        <span>牡2&nbsp;/&nbsp;438kg(初出走)</span><br>
+        <span>
+
+          <a href="#" onclick="return doAction('/JRADB/accessK.html','sw04kmkH10641/36')">柴田善臣</a>(54.0)&nbsp;
+
+          <a href="#" onclick="return doAction('/JRADB/accessC.html','sw05cmkH10428/E3')" class="a-display">石毛善彦</a>(美浦)
+
+        </span><br>
+
+        <span>1:38.2&nbsp;(ハナ)&nbsp;/&nbsp;36.3</span>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td class="tyakuTd">9</td>
+      <td class="wakuTd waku2">2</td>
+      <td class="ubanTd">2</td>
+
+      <td class="umaTd">
+        <a href="#" onclick="return doAction('/JRADB/accessU.html','sj01udeH12011101462/FD')" class="a-display"><span class="bamei">テイエムデンコウ</span></a>
+
+        <span class="ninki">11人気</span><br class="clear">
+
+        <span>牡2&nbsp;/&nbsp;480kg(初出走)</span><br>
+        <span>
+
+          <a href="#" onclick="return doAction('/JRADB/accessK.html','sw04kmkH11127/5F')">丸山元気</a>(54.0)&nbsp;
+
+          <a href="#" onclick="return doAction('/JRADB/accessC.html','sw05cmkH11043/FE')" class="a-display">石栗龍彦</a>(美浦)
+
+        </span><br>
+
+        <span>1:38.5&nbsp;(２)&nbsp;/&nbsp;35.3</span>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td class="tyakuTd">10</td>
+      <td class="wakuTd waku6">6</td>
+      <td class="ubanTd">8</td>
+
+      <td class="umaTd">
+        <a href="#" onclick="return doAction('/JRADB/accessU.html','sj01udeH12011102154/2F')" class="a-display"><span class="bamei">サクラサンストーン</span></a>
+
+        <span class="ninki">6人気</span><br class="clear">
+
+        <span>牡2&nbsp;/&nbsp;516kg(初出走)</span><br>
+        <span>
+
+          <a href="#" onclick="return doAction('/JRADB/accessK.html','sw04kmkH10422/58')">内田博幸</a>(54.0)&nbsp;
+
+          <a href="#" onclick="return doAction('/JRADB/accessC.html','sw05cmkH11047/2E')" class="a-display">勢司和浩</a>(美浦)
+
+        </span><br>
+
+        <span>1:38.6&nbsp;(クビ)&nbsp;/&nbsp;35.8</span>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td class="tyakuTd">11</td>
+      <td class="wakuTd waku6">6</td>
+      <td class="ubanTd">7</td>
+
+      <td class="umaTd">
+        <a href="#" onclick="return doAction('/JRADB/accessU.html','sj01udeH12011101294/B1')" class="a-display"><span class="bamei">シゲルサガミ</span></a>
+
+        <span class="ninki">10人気</span><br class="clear">
+
+        <span>牡2&nbsp;/&nbsp;446kg(初出走)</span><br>
+        <span>
+
+          ▲<a href="#" onclick="return doAction('/JRADB/accessK.html','sw04kmkH11143/05')">原田和真</a>(51.0)&nbsp;
+
+          <a href="#" onclick="return doAction('/JRADB/accessC.html','sw05cmkH11143/48')" class="a-display">和田雄二</a>(美浦)
+
+        </span><br>
+
+        <span>1:38.7&nbsp;(３／４)&nbsp;/&nbsp;35.9</span>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td class="tyakuTd">除外</td>
+      <td class="wakuTd waku4">4</td>
+      <td class="ubanTd">4</td>
+
+      <td class="umaTd">
+        <a href="#" onclick="return doAction('/JRADB/accessU.html','sj01udeH12011105286/43')" class="a-display"><span class="bamei">フェスティヴシー</span></a>
+
+        <span class="ninki">&nbsp;</span><br class="clear">
+
+        <span>牡2&nbsp;/&nbsp;440kg(初出走)</span><br>
+        <span>
+
+          <a href="#" onclick="return doAction('/JRADB/accessK.html','sw04kmkH10684/86')">田中勝春</a>(54.0)&nbsp;
+
+          <a href="#" onclick="return doAction('/JRADB/accessC.html','sw05cmkH11090/71')" class="a-display">天間昭一</a>(美浦)
+
+        </span><br>
+
+      </td>
+    </tr>
+
+  </table>
+</div>
+
+<div class="kekkaTime">
+  <span class="timeTitle">タイム</span>
+  <table>
+
+    <tr>
+      <th>ハロンタイム</th>
+      <td>12.9 - 11.5 - 12.3 - 12.4 - 12.8 - 12.0 - 11.5 - 11.8</td>
+    </tr>
+
+    <tr>
+      <th>上り</th>
+      <td>4F 48.1 - 3F 35.3</td>
+    </tr>
+
+  </table>
+</div>
+
+<div class="kekkaCorner">
+  <span class="cornerTitle">コーナー通過順位</span>
+  <table>
+
+    <tr>
+      <th>2コーナー</th>
+    </tr>
+    <tr>
+      <td><span class="corner1tyaku">12</span>(3,6)9,11,5,7,10-2,8,1</td>
+    </tr>
+
+    <tr>
+      <th>3コーナー</th>
+    </tr>
+    <tr>
+      <td>10,<span class="corner1tyaku">12</span>(3,9)11(6,5)(7,8)1,2</td>
+    </tr>
+
+    <tr>
+      <th>4コーナー</th>
+    </tr>
+    <tr>
+      <td>(*10,<span class="corner1tyaku">12</span>)9,3(11,5)6(7,8)1,2</td>
+    </tr>
+
+  </table>
+</div>
+
+<div class="kekkaHaraimodoshi">
+  <span class="haraimodoshiTitle">払戻金</span>
+  <table>
+    <tr>
+      <th>単勝</th>
+
+      <td class="horseNum">12</td>
+
+      <td class="dividend">1,060円</td>
+
+      <td class="popular">4番人気</td>
+    </tr>
+    <tr>
+      <th>複勝</th>
+
+      <td class="horseNum">12<br>9<br>5</td>
+
+      <td class="dividend">240円<br>480円<br>170円</td>
+
+      <td class="popular">4番人気<br>7番人気<br>2番人気</td>
+    </tr>
+    <tr>
+      <th>枠連</th>
+
+      <td class="horseNum">7-8</td>
+
+      <td class="dividend">400円</td>
+
+      <td class="popular">2番人気</td>
+    </tr>
+    <tr>
+      <th>馬連</th>
+
+      <td class="horseNum">9-12</td>
+
+      <td class="dividend">8,800円</td>
+
+      <td class="popular">22番人気</td>
+    </tr>
+    <tr>
+      <th>馬単</th>
+
+      <td class="horseNum">12-9</td>
+
+      <td class="dividend">15,310円</td>
+
+      <td class="popular">42番人気</td>
+    </tr>
+    <tr>
+      <th>ワイド</th>
+
+      <td class="horseNum">9-12<br>5-12<br>5-9</td>
+
+      <td class="dividend">2,030円<br>710円<br>1,580円</td>
+
+      <td class="popular">22番人気<br>8番人気<br>18番人気</td>
+    </tr>
+    <tr>
+      <th>3連複</th>
+
+      <td class="horseNum">5-9-12</td>
+
+      <td class="dividend">9,530円</td>
+
+      <td class="popular">30番人気</td>
+    </tr>
+    <tr>
+      <th>3連単</th>
+
+      <td class="horseNum">12-9-5</td>
+
+      <td class="dividend">95,260円</td>
+
+      <td class="popular">236番人気</td>
+    </tr>
+  </table>
+</div>
+
+<div class="kekkaHenkan">
+  <table>
+    <tr>
+      <th>返還</th>
+      <td>返還馬番　4番 返還枠番　4枠 </td>
+    </tr>
+  </table>
+</div>
+
+<div class="ssiKekkaPlusTenComment">
+  ※勝馬投票に的中された方がいない場合、その式別に投票された方全員に100円につき70円の特払いをいたします（ＷＩＮ５を除く）。<br>
+  ※特定の馬番・組番に人気が著しく集中した場合、ＪＲＡプラス10の対象にならないことがあります。
+</div>
+
+<br>
+<div class="raceSelectArea">
+  <table>
+  <tr>
+    <td><a href="#" onclick="return doAction('/JRADB/accessS.html','sw01sdeH606201304070120130922/F2');">1R</a></td>
+    <td><a href="#" onclick="return doAction('/JRADB/accessS.html','sw01sdeH606201304070220130922/A7');">2R</a></td>
+    <td><a href="#" onclick="return doAction('/JRADB/accessS.html','sw01sdeH606201304070320130922/5C');">3R</a></td>
+    <td><a href="#" onclick="return doAction('/JRADB/accessS.html','sw01sdeH606201304070420130922/11');">4R</a></td>
+    <td class="raceSelected">5R</td>
+    <td><a href="#" onclick="return doAction('/JRADB/accessS.html','sw01sdeH606201304070620130922/7B');">6R</a></td>
+  </tr>
+  <tr>
+    <td><a href="#" onclick="return doAction('/JRADB/accessS.html','sw01sdeH606201304070720130922/30');">7R</a></td>
+    <td><a href="#" onclick="return doAction('/JRADB/accessS.html','sw01sdeH606201304070820130922/E5');">8R</a></td>
+    <td><a href="#" onclick="return doAction('/JRADB/accessS.html','sw01sdeH606201304070920130922/9A');">9R</a></td>
+    <td><a href="#" onclick="return doAction('/JRADB/accessS.html','sw01sdeH606201304071020130922/8F');">10R</a></td>
+    <td><a href="#" onclick="return doAction('/JRADB/accessS.html','sw01sdeH606201304071120130922/44');">11R</a></td>
+    <td><a href="#" onclick="return doAction('/JRADB/accessS.html','sw01sdeH606201304071220130922/F9');">12R</a></td>
+  </tr>
+  </table>
+</div>
+
+
+
+<div class="ssiDenRaceComment"></div>
+
+<br>
+
+<div id="proc_hf">
+<!--フッター-->
+	<div class='footer_Line'>
+	</div>
+	<div id='footer'>
+		<div class='footer_About'><a href='/use/'>ご利用に際して（利用規約）</a></div>
+		<div class='footer_Close'><a href='http://jra.jp/' target='_blank'><img  width='101px' height='23px' src = '/images/footer/close.png'></a></div>
+		<div class='footer_Copyright'>Copyright &copy; Japan Racing Association All rights reserved.</div>
+	</div>
+
+<form id="commForm01" method="POST" enctype="application/x-www-form-urlencoded" style="margin-top:0em; margin-bottom:0em"><input type="hidden" id="cname" name="cname" ></form>
+<form id="commFormSearch" method="POST" enctype="application/x-www-form-urlencoded" style="margin-top:0em; margin-bottom:0em"><input type="hidden" id="cnameSearch" name="CNAME" ><input type="hidden" id="expire" name="EXPIRE" ><input type="hidden" id="parm" name="xJ01" ></form>
+
+
+
+
+<!--フッター終わり-->
+</div>
+<form id="commForm01" method="POST" enctype="application/x-www-form-urlencoded" class="hiddenForm"><input type="hidden" id="cname" name="cname" ></form>
+</body>
+</html>
+

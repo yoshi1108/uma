@@ -1,0 +1,35 @@
+package uma.view
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+
+import groovy.swing.SwingBuilder
+
+import javax.swing.BoxLayout;
+import javax.swing.JList
+
+import uma.AllMain;
+import uma.CliborInput;
+import uma.Excel2Data;
+import uma.JraWeb;
+import uma.Misyori;
+import uma.Prop;
+import uma.RaceInfo;
+
+class SettingWindow {
+    static def swing = new SwingBuilder()
+    static main(args){
+        def frame = swing.frame(title:'Frame', size:[800, 500]) {
+            boxLayout(axis:BoxLayout.Y_AXIS)
+            for(String key:Prop.prop.keySet()){
+                
+            }
+            button(text:'キャンセル', actionPerformed: {frame.raceInfo=CliborInput.parseFile();})
+            button(text:'更新', actionPerformed: {raceInfo=CliborInput.parseFile();})
+        }
+        Prop.prop.each{println it}
+
+        // 画面表示
+        frame.show()
+    }
+}
